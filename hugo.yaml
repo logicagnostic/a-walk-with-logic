@@ -1,7 +1,6 @@
 baseURL: "https://logicagnostic.com/"
 languageCode: "en-us"
 title: "A Walk with Logic"
-theme: ""
 
 params:
   description: "The world is not binary. You're a community of individuals living on the spectrum of humanity. This is mostly written from the perspective of a dog named Logic."

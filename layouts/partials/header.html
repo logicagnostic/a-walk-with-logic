@@ -1,0 +1,9 @@
+<header class="site-header">
+  <p class="site-title"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></p>
+  {{ with .Site.Params.nom_de_plume }}<p class="nom-de-plume">by {{ . }}</p>{{ end }}
+  <p class="site-tagline">{{ .Site.Params.description }}</p>
+  <nav class="main-nav">
+    {{ range .Site.Menus.main }}<a href="{{ .URL | relURL }}" class="prompt">{{ .Name }}</a>{{ end }}
+    <a href="{{ "index.xml" | relURL }}" class="prompt">rss</a>
+  </nav>
+</header>

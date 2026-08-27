@@ -1,0 +1,51 @@
+<footer class="site-footer">
+  {{ with .Site.Params.support_url }}
+  <div>
+    <a class="support-link" href="{{ . }}" target="_blank" rel="noopener">support this work</a>
+  </div>
+  {{ end }}
+
+  <div class="email-collector">
+    <p class="prompt">join the list</p>
+    <form id="email-signup-form" class="email-form">
+      <input type="email" name="email" id="email-input" placeholder="your@email.com" required>
+      <button type="submit">submit</button>
+    </form>
+    <p id="email-signup-status" class="email-signup-status"></p>
+  </div>
+
+  <p class="footer-disclaimer">This is a work of creative nonfiction steeped in fictional bias written as agnostic as possible from the perspective of animals.</p>
+
+  <p>{{ .Site.Title }} &middot; &copy; 2026</p>
+</footer>
+
+<script>
+(function () {
+  var SCRIPT_URL = "{{ .Site.Params.apps_script_url }}"; // set in hugo.yaml once the Apps Script is deployed
+  var form = document.getElementById("email-signup-form");
+  var status = document.getElementById("email-signup-status");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!SCRIPT_URL) {
+      status.textContent = "signup isn't connected yet.";
+      return;
+    }
+    var email = document.getElementById("email-input").value;
+    status.textContent = "sending...";
+
+    fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain" },
+      body: JSON.stringify({ email: email })
+    }).then(function () {
+      status.textContent = "you're on the list.";
+      form.reset();
+    }).catch(function () {
+      status.textContent = "something went wrong. try again.";
+    });
+  });
+})();
+</script>
+

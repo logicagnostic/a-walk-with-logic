@@ -1,0 +1,38 @@
+baseURL: "https://logicagnostic.com/"
+languageCode: "en-us"
+title: "A Walk with Logic"
+theme: ""
+
+params:
+  description: "The world is not binary. You're a community of individuals living on the spectrum of humanity. This is mostly written from the perspective of a dog named Logic."
+  author: ""
+  nom_de_plume: "Logic Agnostic"
+  apps_script_url: ""
+  support_url: "https://ko-fi.com/logicagnostic"
+  r2_audio_base: "https://pub-1d8c7574cc514896967310f4893ebcea.r2.dev/"
+
+enableRobotsTXT: true
+
+outputs:
+  home: ["HTML", "RSS"]
+  section: ["HTML", "RSS"]
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+taxonomies:
+  tag: tags
+
+menu:
+  main:
+    - name: "home"
+      url: "/"
+      weight: 1
+    - name: "archive"
+      url: "/posts/"
+      weight: 2
+    - name: "about"
+      url: "/about/"
+      weight: 3

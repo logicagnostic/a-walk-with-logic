@@ -1,0 +1,49 @@
+{{ define "main" }}
+{{ $posts := where .Site.RegularPages "Type" "posts" }}
+{{ $allByDate := $posts.ByDate.Reverse }}
+{{ $featuredSet := where $posts "Params.featured" true }}
+{{ $featured := "" }}
+{{ if gt (len $featuredSet) 0 }}{{ $featured = index $featuredSet 0 }}{{ end }}
+
+{{ $latest := "" }}
+{{ range $allByDate }}
+  {{ if and (not $latest) (ne . $featured) }}{{ $latest = . }}{{ end }}
+{{ end }}
+{{ if and (not $latest) $featured }}{{ $latest = $featured }}{{ end }}
+
+{{ if $featured }}
+<article class="{{ if eq $featured.Params.format "script" }}script-format{{ end }} homepage-featured">
+  <p class="homepage-label prompt">start here</p>
+  <h1><a href="{{ $featured.Permalink }}">{{ $featured.Title }}</a></h1>
+  <p class="post-meta">{{ $featured.Date.Format "2006-01-02" }}{{ with $featured.Params.tags }} &middot; <span class="tags">{{ range . }}<a href="{{ "/search/" | relURL }}?tag={{ . | urlize }}">#{{ . }}</a>{{ end }}</span>{{ end }}</p>
+  {{ with $featured.Params.audio_file }}<audio controls preload="none" src="{{ $.Site.Params.r2_audio_base }}{{ . }}"></audio>{{ end }}
+  <div class="post-content">{{ $featured.Content }}</div>
+</article>
+{{ end }}
+
+{{ if and $latest (ne $latest $featured) }}
+<article class="{{ if eq $latest.Params.format "script" }}script-format{{ end }} homepage-latest">
+  <p class="homepage-label prompt">latest</p>
+  <h1><a href="{{ $latest.Permalink }}">{{ $latest.Title }}</a></h1>
+  <p class="post-meta">{{ $latest.Date.Format "2006-01-02" }}{{ with $latest.Params.tags }} &middot; <span class="tags">{{ range . }}<a href="{{ "/search/" | relURL }}?tag={{ . | urlize }}">#{{ . }}</a>{{ end }}</span>{{ end }}</p>
+  {{ with $latest.Params.audio_file }}<audio controls preload="none" src="{{ $.Site.Params.r2_audio_base }}{{ . }}"></audio>{{ end }}
+  <div class="post-content">{{ $latest.Content }}</div>
+</article>
+
+{{ $nextPost := "" }}
+{{ $foundLatest := false }}
+{{ range $allByDate }}
+  {{ if $foundLatest }}
+    {{ if and (not $nextPost) (ne . $featured) }}{{ $nextPost = . }}{{ end }}
+  {{ end }}
+  {{ if eq . $latest }}{{ $foundLatest = true }}{{ end }}
+{{ end }}
+{{ with $nextPost }}
+<p class="next-post-link"><a href="{{ .Permalink }}" class="prompt">next post</a></p>
+{{ end }}
+{{ end }}
+
+{{ if not $featured }}
+<p class="prompt">nothing published yet.</p>
+{{ end }}
+{{ end }}

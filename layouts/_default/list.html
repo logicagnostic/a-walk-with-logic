@@ -1,0 +1,13 @@
+{{ define "main" }}
+<h1 class="prompt">{{ .Title }}</h1>
+{{ range .Pages.ByDate.Reverse }}
+<div class="post-list-item">
+  <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+  <p class="post-meta">{{ .Date.Format "2006-01-02" }}</p>
+  <p class="post-desc">{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}</p>
+  <a href="{{ .Permalink }}" class="prompt">read</a>
+</div>
+{{ else }}
+<p>nothing here yet.</p>
+{{ end }}
+{{ end }}

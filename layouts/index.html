@@ -18,6 +18,7 @@
   <p class="post-meta">{{ $featured.Date.Format "2006-01-02" }}{{ with $featured.Params.tags }} &middot; <span class="tags">{{ range . }}<a href="{{ "/search/" | relURL }}?tag={{ . | urlize }}">#{{ . }}</a>{{ end }}</span>{{ end }}</p>
   {{ with $featured.Params.audio_file }}<audio controls preload="none" src="{{ $.Site.Params.r2_audio_base }}{{ . }}"></audio>{{ end }}
   <div class="post-content">{{ $featured.Content }}</div>
+  {{ partial "support-block.html" . }}
 </article>
 {{ end }}
 
@@ -28,6 +29,7 @@
   <p class="post-meta">{{ $latest.Date.Format "2006-01-02" }}{{ with $latest.Params.tags }} &middot; <span class="tags">{{ range . }}<a href="{{ "/search/" | relURL }}?tag={{ . | urlize }}">#{{ . }}</a>{{ end }}</span>{{ end }}</p>
   {{ with $latest.Params.audio_file }}<audio controls preload="none" src="{{ $.Site.Params.r2_audio_base }}{{ . }}"></audio>{{ end }}
   <div class="post-content">{{ $latest.Content }}</div>
+  {{ partial "support-block.html" . }}
 </article>
 
 {{ $nextPost := "" }}

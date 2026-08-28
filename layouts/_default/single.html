@@ -17,11 +17,4 @@
     {{ .Content }}
   </div>
 
-  {{ with .Site.Params.support_url }}
-  <div class="post-support-block">
-    <p class="post-support-text">As anti-capitalists, we hate to ask. But this is a capitalist hellscape and bills are a reality. If you enjoy the work, click the button and give whatever you feel you can.</p>
-    <a class="feed-animals-button" href="{{ . }}" target="_blank" rel="noopener">Feed the Animals</a>
-  </div>
-  {{ end }}
-</article>
-{{ end }}
+  {{ partial "support-block.html" . }}

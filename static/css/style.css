@@ -392,3 +392,20 @@ input:focus-visible {
     font-size: 1.15rem;
   }
 }
+.redact {
+  background-color: var(--green);
+  color: var(--green);
+  border-radius: 2px;
+  padding: 0 0.15em;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease;
+}
+
+.redact:hover,
+.redact:focus-visible,
+.redact.revealed {
+  background-color: transparent;
+  text-shadow: 0 0 6px var(--green);
+  outline: none;
+}

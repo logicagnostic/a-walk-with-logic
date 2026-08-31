@@ -1,5 +1,5 @@
 {{ define "main" }}
-<article class="{{ if eq .Params.format "script" }}script-format{{ end }}">
+<article class="{{ if eq .Params.format "script" }}script-format{{ end }}" data-share-url="{{ .Permalink }}" data-share-title="{{ .Title }}">
   <h1>{{ .Title }}</h1>
   <p class="post-meta">{{ .Date.Format "2006-01-02" }}{{ with .Params.tags }} &middot; <span class="tags">{{ range . }}<a href="{{ "/tags/" | relURL }}{{ . | urlize }}/">#{{ . }}</a>{{ end }}</span>{{ end }}</p>
 

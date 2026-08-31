@@ -410,3 +410,40 @@ input:focus-visible {
   text-shadow: 0 0 6px var(--green);
   outline: none;
 }
+
+.floating-share {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 100;
+}
+.share-fab {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #0d1a15;
+  border: 1px solid var(--green-dim);
+  color: var(--green);
+  font-family: inherit;
+  font-size: 0.6rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+.share-fab:hover {
+  background: var(--green-faint);
+  border-color: var(--green);
+}
+.share-feedback {
+  font-size: 0.68rem;
+  color: var(--green-dim);
+  background: #0a1410;
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .floating-share { bottom: 1rem; right: 1rem; }
+}

@@ -12,7 +12,7 @@
 {{ if and (not $latest) $featured }}{{ $latest = $featured }}{{ end }}
 
 {{ if $featured }}
-<article class="{{ if eq $featured.Params.format "script" }}script-format{{ end }} homepage-featured">
+<article class="{{ if eq $featured.Params.format "script" }}script-format{{ end }} homepage-featured" data-share-url="{{ $featured.Permalink }}" data-share-title="{{ $featured.Title }}">
   <p class="homepage-label prompt">start here</p>
   <h1><a href="{{ $featured.Permalink }}">{{ $featured.Title }}</a></h1>
   <p class="post-meta">{{ $featured.Date.Format "2006-01-02" }}{{ with $featured.Params.tags }} &middot; <span class="tags">{{ range . }}<a href="{{ "/search/" | relURL }}?tag={{ . | urlize }}">#{{ . }}</a>{{ end }}</span>{{ end }}</p>
@@ -23,7 +23,7 @@
 {{ end }}
 
 {{ if and $latest (ne $latest $featured) }}
-<article class="{{ if eq $latest.Params.format "script" }}script-format{{ end }} homepage-latest">
+<article class="{{ if eq $latest.Params.format "script" }}script-format{{ end }} homepage-latest" data-share-url="{{ $latest.Permalink }}" data-share-title="{{ $latest.Title }}">
   <p class="homepage-label prompt">latest</p>
   <h1><a href="{{ $latest.Permalink }}">{{ $latest.Title }}</a></h1>
   <p class="post-meta">{{ $latest.Date.Format "2006-01-02" }}{{ with $latest.Params.tags }} &middot; <span class="tags">{{ range . }}<a href="{{ "/search/" | relURL }}?tag={{ . | urlize }}">#{{ . }}</a>{{ end }}</span>{{ end }}</p>

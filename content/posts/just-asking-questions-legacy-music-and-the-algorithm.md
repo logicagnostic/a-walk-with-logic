@@ -36,7 +36,7 @@ We're just asking questions.
 
 It's a funny thing - people keep saying there's no good new music anymore. That's odd, considering more music is being created today than at any point in human history.
 
-Could it be that the algorithm—Spotify's brain, Apple's brain—is trained to feed you what's safe? What's paid for? What doesn't rock the boat?
+Could it be that the algorithm...S{{< redact >}}potify{{< /redact >}}'s brain, A{{< redact >}}pple{{< /redact >}}'s brain... is trained to feed you what's safe? What's paid for? What doesn't rock the boat?
 
 You ever notice how often Fleetwood Mac, The Eagles, and Elton John come up on those "Discover Weekly" lists?
 
@@ -62,7 +62,7 @@ Labels cried theft. They raged against the new machine. But behind those closed 
 
 So when streaming starts popping up in every pocket across the world…it seems naive to think the record industry would let it slip past by. And this time? They didn't just adapt; they took stakes.
 
-Sony, Universal, Warner—they all had skin in the streaming game from the onset, with shares and advisory positions at Spotify and lucrative label deals with Apple Music that weren't just symbolic—they were strategic. The labels didn't just survive the revolution— perhaps they bought the battlefield?
+S{{< redact >}}ony{{< /redact >}}, U{{< redact >}}niversal{{< /redact >}}, W{{< redact >}}arner{{< /redact >}}—they all had skin in the streaming game from the onset, with shares and advisory positions at S{{< redact >}}potify{{< /redact >}} and lucrative label deals with A{{< redact >}}pple Music{{< /redact >}} that weren't just symbolic—they were strategic. The labels didn't just survive the revolution— perhaps they bought the battlefield?
 
 We're just asking questions.
 

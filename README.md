@@ -97,6 +97,7 @@ New posts publish every **2 weeks, Thursdays, 4:00 PM Pacific**. As of launch (A
 | Oct 22, 2026 | Just Asking Questions |
 | Nov 5, 2026 | Deacon Denial, Chapter 3: Story is Biased |
 | Nov 19, 2026 | Deacon Denial, Chapter 4: Aliens, Pyramids and the people's paradise |
+| Dec 3, 2026 | A Thought with Logic (quote post, matrix code with hidden lines) |
 
 After Oct 22, new pieces continue on the same cadence as you provide them.
 

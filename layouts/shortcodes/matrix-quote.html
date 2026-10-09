@@ -1,0 +1,11 @@
+{{- $quote := trim .Inner " \n" -}}
+{{- $sig := .Get "sig" -}}
+<figure class="mq" data-mq data-hidden="{{ .Get "hidden" }}" data-hidden2="{{ .Get "hidden2" }}">
+  <div class="mq-inner">
+    <canvas aria-hidden="true"></canvas>
+    <p class="mq-text">{{ $quote }}</p>
+    {{ with $sig }}<span class="mq-sig">{{ . }}</span>{{ end }}
+  </div>
+</figure>
+{{ with .Get "hint" }}<p class="mq-hint">{{ . }}</p>{{ end }}
+<script src="{{ "js/matrix-quote.js" | relURL }}" defer></script>

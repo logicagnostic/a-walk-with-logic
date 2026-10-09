@@ -36,7 +36,7 @@ Claude will build the complete Markdown file with correct frontmatter, matching 
 
 **Step 5 — Wait for the build.** GitHub Actions rebuilds the site automatically within about a minute of every push. Check the **Actions** tab on GitHub — a green checkmark means it's live.
 
-**Step 6 — If it's dated for the future**, it won't appear until that date/time passes *and* the next scheduled rebuild runs. The site rebuilds automatically once daily. If you don't want to wait, trigger it manually: **Actions tab → "Build and deploy site" → "Run workflow" button.**
+**Step 6 — If it's dated for the future**, it won't appear until that date/time passes *and* the next scheduled rebuild runs. The site rebuilds automatically once daily, plus every Thursday at about 4:05 PM Pacific so release day posts go live on time (GitHub sometimes runs scheduled jobs a few minutes late). If you don't want to wait, trigger it manually: **Actions tab → "Build and deploy site" → "Run workflow" button.**
 
 ---
 
@@ -56,7 +56,7 @@ audio_file: "some-filename.mp3"
 ---
 ```
 
-- **date** — controls both ordering and whether it's "published" yet. Format must be exact: `YYYY-MM-DDTHH:MM:SS-07:00` (the `-07:00` is Pacific time; stays the same except during daylight saving changes, which Claude can flag if relevant).
+- **date** — controls both ordering and whether it's "published" yet. Format must be exact: `YYYY-MM-DDTHH:MM:SS-07:00` (Pacific time). Use `-07:00` from mid March to the first Sunday of November (daylight time) and `-08:00` from then until mid March (standard time). Posts dated November through early March need `-08:00`.
 - **format** — `"script"` triggers bold centered speaker names and italicized stage directions automatically. `"prose"` leaves formatting plain.
 - **featured** — `true` for the one permanent front-door post (currently TPfF). Only one post should ever have this set to `true` at a time.
 - **audio_file** — just the filename (e.g. `chapter2-segment1-doggy-standoff.mp3`), not a full URL. The site automatically builds the full link using the R2 base URL already set in `hugo.yaml`.
@@ -95,6 +95,8 @@ New posts publish every **2 weeks, Thursdays, 4:00 PM Pacific**. As of launch (A
 | Sep 24, 2026 | Words Evolve |
 | Oct 8, 2026 | I Like People in Small Groups |
 | Oct 22, 2026 | Just Asking Questions |
+| Nov 5, 2026 | Deacon Denial, Chapter 3: Story is Biased |
+| Nov 19, 2026 | Deacon Denial, Chapter 4: Aliens, Pyramids and the people's paradise |
 
 After Oct 22, new pieces continue on the same cadence as you provide them.
 

@@ -14,7 +14,7 @@
   {{ end }}
 
   <div class="post-content">
-    {{ .Content }}
+    {{ .Content | replaceRE `<p><em>([^<]*)</em></p>` `<p class="direction"><em>$1</em></p>` | replaceRE `<em>([(\[][^<]*[)\]])</em>` `<em class="aside">$1</em>` | safeHTML }}
   </div>
 
   {{ partial "support-block.html" . }}

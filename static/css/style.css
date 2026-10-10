@@ -285,7 +285,8 @@ footer.site-footer {
   color: var(--green);
   letter-spacing: 0.03em;
 }
-.script-format .post-content p:has(> em:only-child) {
+.script-format .post-content p.direction,
+.script-format .post-content em.aside {
   color: var(--text-dim);
 }
 .script-format .post-content h2 {

@@ -58,6 +58,7 @@ audio_file: "some-filename.mp3"
 
 - **date** — controls both ordering and whether it's "published" yet. Format must be exact: `YYYY-MM-DDTHH:MM:SS-07:00` (Pacific time). Use `-07:00` from mid March to the first Sunday of November (daylight time) and `-08:00` from then until mid March (standard time). Posts dated November through early March need `-08:00`.
 - **format** — `"script"` triggers bold centered speaker names and italicized stage directions automatically. `"prose"` leaves formatting plain.
+  - Stage direction rule (script posts): italic text inside ( ) or [ ] is a stage direction and shows dim gray, whether it sits on its own line or inside a spoken line. Other italics, like emphasis on a single word, stay bright with the speech.
 - **featured** — `true` for the one permanent front-door post (currently TPfF). Only one post should ever have this set to `true` at a time.
 - **audio_file** — just the filename (e.g. `chapter2-segment1-doggy-standoff.mp3`), not a full URL. The site automatically builds the full link using the R2 base URL already set in `hugo.yaml`.
 - **tags** — optional, shown under the post title and linkable into the search page.

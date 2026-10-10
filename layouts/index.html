@@ -17,7 +17,7 @@
   <h1><a href="{{ $featured.Permalink }}">{{ $featured.Title }}</a></h1>
   <p class="post-meta">{{ $featured.Date.Format "2006-01-02" }}{{ with $featured.Params.tags }} &middot; <span class="tags">{{ range . }}<a href="{{ "/search/" | relURL }}?tag={{ . | urlize }}">#{{ . }}</a>{{ end }}</span>{{ end }}</p>
   {{ with $featured.Params.audio_file }}<audio controls preload="none" src="{{ $.Site.Params.r2_audio_base }}{{ . }}"></audio>{{ end }}
-  <div class="post-content">{{ $featured.Content }}</div>
+  <div class="post-content">{{ $featured.Content | replaceRE `<p><em>([^<]*)</em></p>` `<p class="direction"><em>$1</em></p>` | replaceRE `<em>([(\[][^<]*[)\]])</em>` `<em class="aside">$1</em>` | safeHTML }}</div>
   {{ partial "support-block.html" . }}
 </article>
 {{ end }}
@@ -28,7 +28,7 @@
   <h1><a href="{{ $latest.Permalink }}">{{ $latest.Title }}</a></h1>
   <p class="post-meta">{{ $latest.Date.Format "2006-01-02" }}{{ with $latest.Params.tags }} &middot; <span class="tags">{{ range . }}<a href="{{ "/search/" | relURL }}?tag={{ . | urlize }}">#{{ . }}</a>{{ end }}</span>{{ end }}</p>
   {{ with $latest.Params.audio_file }}<audio controls preload="none" src="{{ $.Site.Params.r2_audio_base }}{{ . }}"></audio>{{ end }}
-  <div class="post-content">{{ $latest.Content }}</div>
+  <div class="post-content">{{ $latest.Content | replaceRE `<p><em>([^<]*)</em></p>` `<p class="direction"><em>$1</em></p>` | replaceRE `<em>([(\[][^<]*[)\]])</em>` `<em class="aside">$1</em>` | safeHTML }}</div>
   {{ partial "support-block.html" . }}
 </article>
 

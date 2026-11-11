@@ -32,5 +32,9 @@
 </div>
 {{ partial "share-button.html" . }}
 <script src="{{ "js/share.js" | relURL }}" defer></script>
+{{ with .Site.Params.audio_plays_url }}
+<script>window.AUDIO_PLAYS_URL = "{{ . }}";</script>
+<script src="{{ "js/audio-plays.js" | relURL }}" defer></script>
+{{ end }}
 </body>
 </html>

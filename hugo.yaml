@@ -9,6 +9,7 @@ params:
   apps_script_url: "https://script.google.com/macros/s/AKfycbxYTtHrSZpLIiPCw7nVaLHselMWAcGb3GL1ToD6WOh9OClQfUor_cRvG1mbbF3d-M8k/exec"
   support_url: "https://ko-fi.com/logicagnostic"
   r2_audio_base: "https://pub-1d8c7574cc514896967310f4893ebcea.r2.dev/"
+  audio_plays_url: "https://script.google.com/macros/s/AKfycbxD0RGjhfAO49D38cSWH3XrTWGTF2E_XNTD6hEfTjrjbrZOtzsmOE2uyO1cUZQwEiSh/exec"
 
 enableRobotsTXT: true
 

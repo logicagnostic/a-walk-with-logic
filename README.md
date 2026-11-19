@@ -100,6 +100,7 @@ New posts publish every **2 weeks, Thursdays, 4:00 PM Pacific**. As of launch (A
 | Nov 19, 2026 | Deacon Denial, Chapter 4: Aliens, Pyramids and the people's paradise |
 | Dec 3, 2026 | A Thought with Logic (quote post, matrix code with hidden lines) |
 | Dec 17, 2026 | Deacon Denial, Chapter 5: Monarchy |
+| Dec 31, 2026 | Deacon Denial, Chapter 6: Heroes in a Binary World |
 
 After Oct 22, new pieces continue on the same cadence as you provide them.
 
